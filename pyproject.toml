@@ -10,6 +10,8 @@ python = "^3.11"
 fastapi = "^0.105.0"
 sqlalchemy = "^2.0.23"
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+pydantic = {extras = ["email"], version = "^2.5.3"}
 
 
 [build-system]
