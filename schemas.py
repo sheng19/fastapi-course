@@ -15,9 +15,10 @@ class PostUpdate(BaseModel):
 
 class Post(BaseModel):
     id: int
-    title: str
+    title: str 
     content: str
     published: bool
+    owner_id: int
 
     class Config:
         orm_mode = True
