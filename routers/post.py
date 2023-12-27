@@ -11,8 +11,8 @@ router = APIRouter(
 
 
 @router.get('', status_code = status.HTTP_200_OK, response_model = list[schemas.Post])
-def read_all_post(db: Session = Depends(get_db)):
-    posts = db.query(models.Post).all()
+def read_all_post(db: Session = Depends(get_db), limit: int = 10, skip: int = 0):
+    posts = db.query(models.Post).limit(limit).offset(skip).all()
     return posts
 
 @router.get('/{id}', status_code = status.HTTP_200_OK, response_model = schemas.Post)
